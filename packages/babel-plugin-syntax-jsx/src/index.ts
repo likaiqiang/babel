@@ -1,4 +1,4 @@
-import { declare } from "@babel/helper-plugin-utils";
+import {declare} from "@babel/helper-plugin-utils";
 
 export default declare(api => {
   api.assertVersion(
@@ -17,7 +17,7 @@ export default declare(api => {
         if (
           parserOpts.plugins.some(
             p => (Array.isArray(p) ? p[0] : p) === "typescript",
-          )
+          ) && parserOpts.plugins.includes('jsx')
         ) {
           return;
         }
